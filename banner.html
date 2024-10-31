@@ -1,3 +1,132 @@
-<div class="email-capture-banner">
-    <p>HELLO</p>
+<!-- Add this link to the <head> section to import the Fahkwang font -->
+<link href="https://fonts.googleapis.com/css2?family=Fahkwang:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Add this CSS in the <head> section or within a <style> tag -->
+<style>
+/* Reset box-sizing for all elements */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Base styles */
+.email-capture-section {
+    background-color: #e9ddcf;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    overflow-x: hidden; /* Prevent horizontal scrollbar */
+    font-family: 'Fahkwang', sans-serif;
+}
+
+.image-container {
+    flex: 0 0 200px;
+    width: 200px;
+    position: relative;
+}
+
+.image-wrapper {
+    padding-top: 100%;
+    position: relative;
+    width: 100%;
+}
+
+.image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.content-container {
+    flex: 1;
+    padding-left: 15px;
+    min-width: 0;
+}
+
+.content-container h2 {
+    margin-top: 0;
+    font-size: 24px;
+    overflow-wrap: break-word;
+}
+
+.content-container p {
+    font-size: 16px;
+    margin-top: 5px;
+    overflow-wrap: break-word;
+}
+
+.content-container .iframe-wrapper {
+    position: relative;
+    width: 100%;
+    height: 52px;
+    overflow: hidden;
+}
+
+.content-container .iframe-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    .email-capture-section {
+        padding: 10px;
+        overflow-x: hidden; /* Ensure no horizontal scrollbar on mobile */
+    }
+
+    .image-container {
+        display: none; /* Hide the image container on mobile */
+    }
+
+    .content-container {
+        padding-left: 0;
+        /* Adjust flex properties since the image is gone */
+        flex: 1 1 100%;
+    }
+
+    .content-container h2 {
+        font-size: 18px; /* Increase font size for better readability */
+    }
+
+    .content-container p {
+        font-size: 14px;
+    }
+
+    .content-container .iframe-wrapper {
+        transform: scale(0.9);
+        transform-origin: top left;
+        width: calc(100% / 0.9); /* Adjust width based on scaling */
+        height: 52px;
+        overflow: hidden;
+    }
+}
+</style>
+
+<!-- Email Capture Section -->
+<div class="email-capture-section">
+    <!-- Image Container -->
+    <div class="image-container">
+        <div class="image-wrapper">
+            <img src="https://static.wixstatic.com/media/47f4ad_b4150a6750e94bafb040972b09523281~mv2.jpg" alt="City Architecture">
+        </div>
+    </div>
+    <!-- Content Container -->
+    <div class="content-container">
+        <h2>Want to Explore the Architecture of a New Global City Every Week?</h2>
+        <p>Sign up to our newsletter to join the journey of global cities, from Paris to Dubai!</p>
+        <!-- Email Capture iframe -->
+        <div class="iframe-wrapper">
+            <iframe src="https://embeds.beehiiv.com/a13f7d86-cbd7-4e90-a499-b2cb4c4222a6?slim=true" data-test-id="beehiiv-embed" scrolling="no"></iframe>
+        </div>
+    </div>
 </div>
+
