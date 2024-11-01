@@ -116,17 +116,40 @@
     <!-- Image Container -->
     <div class="image-container">
         <div class="image-wrapper">
-            <img src="https://static.wixstatic.com/media/47f4ad_b4150a6750e94bafb040972b09523281~mv2.jpg" alt="City Architecture">
+            <img id="rotating-image" src="https://static.wixstatic.com/media/47f4ad_867cc288ad8f4777bbb83ad6d9e47bf2~mv2.png" alt="Rotating Image">
         </div>
     </div>
     <!-- Content Container -->
     <div class="content-container">
-        <h2>Want to Explore the Architecture of a New Global City Every Week?</h2>
-        <p>Sign up to our newsletter to join the journey of global cities, from Paris to Dubai!</p>
+        <h2>Want To Win An Designer Home Set Worth Over $1000?</h2>
+        <p>
+            Enter below for a chance to win our Christmas Giveaway! To find out more information
+            <a href="https://www.archtene.com/giveaway" target="_blank" style="text-decoration: underline; color: #785e26">Click Here</a>
+        </p>
         <!-- Email Capture iframe -->
         <div class="iframe-wrapper">
-            <iframe src="https://embeds.beehiiv.com/a13f7d86-cbd7-4e90-a499-b2cb4c4222a6?slim=true" data-test-id="beehiiv-embed" scrolling="no"></iframe>
+            <iframe src="https://embeds.beehiiv.com/047f4187-bdae-4c87-9dfb-b9978f70b1b4?slim=true" data-test-id="beehiiv-embed" height="52" frameborder="0" scrolling="no" style="margin: 0; border-radius: 0px !important; background-color: transparent;"></iframe>
         </div>
     </div>
 </div>
+
+<!-- Add this script at the end of your HTML body -->
+<script>
+(function() {
+    var images = [
+        'https://static.wixstatic.com/media/47f4ad_867cc288ad8f4777bbb83ad6d9e47bf2~mv2.png',
+        'https://static.wixstatic.com/media/47f4ad_eadcd336673c4bf0accb0f9080d5c8e2~mv2.png',
+        'https://static.wixstatic.com/media/47f4ad_7c386747975c4f6287f10f1adfa8f4b9~mv2.png',
+        'https://static.wixstatic.com/media/47f4ad_a211b277349a45f59006d9df9f288859~mv2.png'
+    ];
+
+    var index = 0;
+    var rotatingImage = document.getElementById('rotating-image');
+
+    setInterval(function() {
+        index = (index + 1) % images.length;
+        rotatingImage.src = images[index];
+    }, 1000); // Change image every 1000 milliseconds (1 second)
+})();
+</script>
 
